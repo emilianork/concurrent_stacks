@@ -4,13 +4,13 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class CompareAndSetStack <T> {
     
-	private AtomicReference<SimpleNode<T>> top;
+	protected AtomicReference<SimpleNode<T>> top;
 	
 	public CompareAndSetStack() {
 		this.top = new AtomicReference<SimpleNode<T>>();
 	}
 	
-	private boolean tryPush(SimpleNode<T> node) {
+	protected boolean tryPush(SimpleNode<T> node) {
 		SimpleNode<T> oldTop = top.get();
 		node.setNext(oldTop);
 		
@@ -25,8 +25,7 @@ public class CompareAndSetStack <T> {
 		}
 	}
 
-
-	private SimpleNode<T> tryPop() throws ConcurrentPopException {
+	protected SimpleNode<T> tryPop() throws ConcurrentPopException {
 		SimpleNode<T> oldTop = top.get();
 		if (oldTop == null) 
 			throw new ConcurrentPopException();
