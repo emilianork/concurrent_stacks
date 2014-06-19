@@ -1,3 +1,7 @@
+/**
+ * @author Emiliano Cabrera (jemiliano.cabrera@gmail.com)
+ */
+
 package concurrent.stacks;
 
 import java.util.concurrent.TimeoutException;

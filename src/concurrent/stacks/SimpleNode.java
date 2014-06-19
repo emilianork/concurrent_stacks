@@ -1,5 +1,11 @@
+/**
+ * @author Emiliano Cabrera (jemiliano.cabrera@gmail.com)
+ */
 package concurrent.stacks;
 
+/**
+ * A simple implementation of a node.
+ */
 public class SimpleNode<T> {
 	private T value;
 	private SimpleNode<T> next;

@@ -7,10 +7,12 @@
 	<property name="build"      location="build"/>
 	<property name="dist"       location="dist"/>
 	<property name="libraries"  location="libraries"/>
+	<property name="doc"        location="doc"/>
 
 	<target name="init">
 		<!-- Create the build directory structure used by compile -->
 		<mkdir dir="${build}"/>
+		<mkdir dir="${doc}"/>
 	</target>
 
 	<target name="compile" depends="init" description="compile the source " >
@@ -50,5 +52,9 @@
 		<delete dir="${dist}"/>
 	</target>
 
+	<!-- Generate javadocs for current project into ${doc} -->
+  <target name="doc" depends="init" description="generate documentation">
+    <javadoc sourcepath="${src}" destdir="${doc}"/>
+  </target>
 	
 </project>

@@ -1,9 +1,13 @@
+/**
+ * @author Emiliano Cabrera (jemiliano.cabrera@gmail.com)
+ */
+
 package concurrent.stacks;
 
 public class BackOffStack<T> extends CompareAndSetStack<T> {
     
 	protected ExponentialBackOff backoff;
-	
+
 	private static final int MIN_DELAY = 1;
 	private static final int MAX_DELAY = 100;
 	
