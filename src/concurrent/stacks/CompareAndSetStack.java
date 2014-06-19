@@ -30,7 +30,7 @@ public class CompareAndSetStack <T> {
 	 * @param node The new node we want on the top
 	 * @return True if {@link node} is the new top, false otherwise.
 	 */
-	private boolean tryPush(SimpleNode<T> node) {
+	protected boolean tryPush(SimpleNode<T> node) {
 		SimpleNode<T> oldTop = top.get();
 		node.setNext(oldTop);
 		
@@ -53,7 +53,7 @@ public class CompareAndSetStack <T> {
 	 * Auxiliary method of {@link pop}
 	 * @return top The top of the Stack.
 	 */
-	private SimpleNode<T> tryPop() throws ConcurrentPopException {
+	protected SimpleNode<T> tryPop() throws ConcurrentPopException {
 		SimpleNode<T> oldTop = top.get();
 		if (oldTop == null) 
 			throw new ConcurrentPopException();

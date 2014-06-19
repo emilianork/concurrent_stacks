@@ -6,7 +6,7 @@
 # Package Files #
 *.war
 *.ear
-
+*.pdf
 dist/
 doc/
 
